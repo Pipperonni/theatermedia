@@ -2,19 +2,24 @@
     box-sizing: border-box;
 }
 
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 /* 
 * Start Header Styling
 */
 
 .header-container{
-    width: 1920px;
-    height: 150px;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     background-color: black;
     gap: 200px
+    
 }
 
 .header-container h1{
@@ -34,6 +39,12 @@
     color: white;
     font-size: 25px;
 }
+
+@media (max-width: 1000px){
+    .header-container{
+        display: none;
+    }
+}
 /* 
 * End Header Styling
 */
@@ -42,19 +53,37 @@
 * Start Hero Styling
 */
 .hero-image{
-    background-image: url(./img/backgroundimage.jpg);
-    width: 1920px;
-    height: 959px;
     margin: 0 auto;
+    
 }
 
-.hero-image h2{
+.back-image{
+    background-image: url(./img/backgroundimage.jpg);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1/1;
+}
+
+.hero-image-h2{
     color: white;
     font-size: 180px;
     margin: 0 auto;
     padding: 375px 0;
     text-align: center;
+}
 
+@media (max-width: 1000px){
+    .hero-image{
+        width: 100%;
+    }
+    .back-image{
+        background-size: contain;
+    }
+    .hero-image-h2{
+        font-size: 90px;
+        color: black;
+    }    
 }
 
 /* 
@@ -68,7 +97,7 @@
 .info-container{
     display: flex;
     flex-direction: column;
-    width: 1920px;
+    
     margin: 150px auto;
     
 }
@@ -125,13 +154,23 @@
     border-radius: 5px;
 }
 
+@media (max-width: 1000px){
+    .info-container h3{
+        align-items: center;
+    }
+    .show-times{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
 /* 
 * Start Footer Styling
 */
 
 .foot-container{
-    width: 1920px;
-    height: 460px;
     margin: 0 auto;
     display: flex;
     background-color: black;
@@ -154,18 +193,7 @@
     margin-right: 100px;
 }
 
-@media (max-width: 1000px){
-    .foot-container{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .foot-links{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-}
+
 
 .foot-info{
     display: flex;
@@ -174,7 +202,7 @@
     justify-content: space-evenly;
 }
 
-.info-h{
+.foot-h{
     font-size: 35px;
     color: white;
     list-style-type: none;    
@@ -195,12 +223,6 @@
     justify-content: space-evenly;
 }
 
-.show-h{
-    font-size: 35px;
-    color: white;
-    list-style-type: none;    
-}
-
 .foot-show-links{
     list-style-type: none;
 }
@@ -216,12 +238,6 @@
     justify-content: space-evenly;
 }
 
-.social-h{
-    font-size: 35px;
-    color: white;
-    list-style-type: none;    
-}
-
 .foot-social-links{
     list-style-type: none;
 }
@@ -230,6 +246,29 @@
     text-decoration: none;
     color: white;
 }
+
+@media (max-width: 1000px){
+    .foot-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: white;
+    }
+    .foot-links{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .foot-h{
+        color: black;
+    }
+    .foot-links a{
+        color: black;
+    }
+}
+
+
 /* 
 * End Footer Styling
 */
